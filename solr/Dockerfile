@@ -1,0 +1,1 @@
+FROM ssuatdockerreg.theuniprogroup.com/solr3.x

@@ -1,0 +1,38 @@
+mysql:
+    build: ./mysql/
+    ports:
+        - 3306:3306
+    volumes:
+        - $CONNECT_MYSQL_VOLUME:/var/lib/mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: Candor82
+        MYSQL_DATABASE: connect
+        MYSQL_USER: root
+        MYSQL_PASSWORD: Candor82
+redis:
+    build: ./redis/
+    ports:
+        - 6379:6379
+solr:
+    build: ./solr/
+    ports:
+         - 8983:8983
+fpm:
+    build: ./fpm/
+    links:
+        - mysql
+        - redis
+        - solr
+    volumes:
+        - $CONNECT_WWW_VOLUME:/var/www/html:rw
+nginx:
+    build: ./nginx/
+    ports:
+        - 8082:80
+    volumes_from:
+        - fpm
+    links:
+        - fpm
+    environment:
+        - phpmem=1024
+        - nginx_worker=2
