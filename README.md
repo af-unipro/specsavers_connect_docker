@@ -3,15 +3,14 @@
 ### Prerequisites
 
 * Docker (or docker toolkit if windows 7)
-* docker-compose if not running docker toolkit 
-* Babun Docker https://github.com/tiangolo/babun-docker
+* docker-compose if not running docker toolkit https://docs.docker.com/compose/install/
 * Obtain the Connect SQL dump from DevOps
 * Obtain docker repo creds for ssuatdockerreg.theuniprogroup.com from DevOps
 * Clone the https://github.com/TheUniproGroup/specsavers_connect repo and checkout the latest release (i.e. git checkout release-v3.0)
 
 ### Installation
 
-1. Clone this repo
+1. Clone this repo cd into it
 2. Run via terminal:
 
    ```
@@ -54,3 +53,16 @@
 
 9. Copy & paste the docker host IP and paste it in the browser. Also specify the port nginx is running e.g. 8082
 10. Site should appear as standard prompting you to login.
+
+### Advisories
+
+1. If running docker toolkit and cygwin, you may want to consider migrating to https://github.com/tiangolo/babun-docker as I found issues ssh-ing in via cygwin.
+2. You may want to clear drupal cache by running the following:
+
+   ```
+   docker ps
+   docker exec -it %FPM CONTAINER NAME% /bin/bash
+   drush cc all
+   ```
+   
+   To re-build the drupal cache from scratch
