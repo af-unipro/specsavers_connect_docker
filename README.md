@@ -64,7 +64,7 @@
 
    ```
    docker ps
-   docker exec -it %FPM CONTAINER NAME% /bin/bash
+   docker exec -it %FPM CONTAINER NAME% bash
    drush cc all
    ```
    
@@ -76,3 +76,5 @@
    docker-machine env %MACHINE_NAME%
    eval (LAST LINE OF THE PREVOUS COMMAND)
    ```   
+   
+* On windows, when mounting volumes, be wary of drives outside the c:/Users as they may not mount and docker will not warn you
