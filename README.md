@@ -27,7 +27,7 @@
 3. Run via terminal: 
 
    ```
-   export CONNECT_WWW_VOLUME=%WHERE_SPECSAVERS_CODEBASE_HAS_BEEN_CLONED%; export CONNECT_MYSQL_VOLUME=%WHERE_YOU_WISH_MYSQL_FILES_TO_RESIDE%; docker-compose up -d
+   export CONNECT_WWW_VOLUME=%WHERE_SPECSAVERS_CODEBASE_HAS_BEEN_CLONED%; export CONNECT_MYSQL_VOLUME=%WHERE_YOU_WISH_MYSQL_FILES_TO_RESIDE%; docker-compose up -d --build
    ```
 
 4. Once it has finished, copy your connect sql file into the mysql directory
@@ -69,3 +69,10 @@
    ```
    
    To re-build the drupal cache from scratch
+   
+* If you are using docker toolkit, docker login may not work if you have not run configured your shell. If you encounter issues then execute the following:
+
+   ```
+   docker-machine env %MACHINE_NAME%
+   eval (LAST LINE OF THE PREVOUS COMMAND)
+   ```   

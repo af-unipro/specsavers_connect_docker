@@ -25,6 +25,4 @@ RUN chown www-data:staff /tmp /data/shared/tmp /data/shared/private
 RUN chmod -R 0777 /tmp /var/www/html /data/shared/tmp /data/shared/private
 RUN usermod -u 1000 www-data
 
-WORKDIR /var/www/html/code	
-
-RUN cd /var/www/html/code && drush cc all
+WORKDIR /var/www/html
