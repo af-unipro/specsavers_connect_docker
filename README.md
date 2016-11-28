@@ -2,22 +2,22 @@
 
 ### Prerequisites
 
-```
 * Docker (or docker toolkit if windows 7)
 * Babun Docker https://github.com/tiangolo/babun-docker
 * Connect SQL dump
 * Docker repo creds for ssuatdockerreg.theuniprogroup.com
-```
 
 ### Installation
 
 1. Clone this repo
 2. Run via terminal:
 
+```
 docker login ssuatdockerreg.theuniprogroup.com
 docker pull ssuatdockerreg.theuniprogroup.com/php:15.03-5.6.5-fpm-mod10
 docker pull ssuatdockerreg.theuniprogroup.com/nginx:15.03.26-mod4
 docker pull ssuatdockerreg.theuniprogroup.com/solr3.x
+```
 
 3. Clone the https://github.com/TheUniproGroup/specsavers_connect repo
 4. Checkout the latest release (i.e. git checkout release-v3.0)
