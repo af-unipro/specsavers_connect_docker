@@ -3,14 +3,12 @@ mysql:
     ports:
         - 3306:3306
     volumes:
-        - /cygdrive/c/Development/db/mysql2:/var/lib/mysql
+        - ${CONNECT_MYSQL_VOLUME}:/var/lib/mysql
     environment:
         MYSQL_ROOT_PASSWORD: Candor82
         MYSQL_DATABASE: connect
         MYSQL_USER: root
         MYSQL_PASSWORD: Candor82
-    args:
-        - CONNECT_MYSQL_VOLUME	
 redis:
     build: ./redis/
     ports:
@@ -27,8 +25,6 @@ fpm:
         - solr
     volumes:
         - ${CONNECT_WWW_VOLUME}:/var/www/html:rw
-    args:
-        - CONNECT_WWW_VOLUME
 nginx:
     build: ./nginx/
     ports:
