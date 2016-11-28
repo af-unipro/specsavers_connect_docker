@@ -8,6 +8,10 @@
 * Obtain docker repo creds for ssuatdockerreg.theuniprogroup.com from DevOps
 * Clone the https://github.com/TheUniproGroup/specsavers_connect repo and checkout the latest release (i.e. git checkout release-v3.0)
 
+#### Optionals
+
+* If running docker toolkit and cygwin, you may want to consider migrating to https://github.com/tiangolo/babun-docker as I found issues ssh-ing in via cygwin.
+
 ### Installation
 
 1. Clone this repo cd into it
@@ -56,8 +60,7 @@
 
 ### Advisories
 
-1. If running docker toolkit and cygwin, you may want to consider migrating to https://github.com/tiangolo/babun-docker as I found issues ssh-ing in via cygwin.
-2. You may want to clear drupal cache by running the following:
+* You may want to clear drupal cache by running the following:
 
    ```
    docker ps
