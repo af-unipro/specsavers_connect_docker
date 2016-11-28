@@ -3,9 +3,10 @@
 ### Prerequisites
 
 * Docker (or docker toolkit if windows 7)
+* docker-compose if not running docker toolkit 
 * Babun Docker https://github.com/tiangolo/babun-docker
-* Connect SQL dump
-* Docker repo creds for ssuatdockerreg.theuniprogroup.com
+* Obtain the Connect SQL dump from DevOps
+* Obtain docker repo creds for ssuatdockerreg.theuniprogroup.com from DevOps
 
 ### Installation
 
