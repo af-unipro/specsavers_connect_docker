@@ -29,14 +29,29 @@ export CONNECT_WWW_VOLUME=%WHERE_SPECSAVERS_CODEBASE_HAS_BEEN_CLONED%; export CO
 ```
 
 6. Once it has finished, copy your connect sql file into the mysql directory
-7. Run docker ps to find all names of running containers
-8. Run docker exec -it %MYSQL CONTAINER NAME% /bin/bash
-9. Import the sql file via command line e.g. mysql -u root -p connect < %SQL_DUMP_LOCATION%
+7. Run the following to find all names of running containers: 
+
+```
+docker ps
+```
+
+8. Run the following to ssh into the mysql container:
+
+```
+docker exec -it %MYSQL CONTAINER NAME% /bin/bash
+```
+
+9. Import the sql file via command line:
+
+```
+mysql -u root -p connect < %SQL_DUMP_LOCATION%
+```
+
 10. To obtain the public IP run via terminal:
 
 ```
 docker-machine env
 ```
 
-11. Copy & paste the docker host IP and paste it in the browser. Also specify the port nginx is running 8082
+11. Copy & paste the docker host IP and paste it in the browser. Also specify the port nginx is running e.g. 8082
 12. Site should appear as standard prompting you to login.
