@@ -7,7 +7,7 @@ mysql:
     environment:
         MYSQL_ROOT_PASSWORD: Candor82
         MYSQL_DATABASE: connect
-        MYSQL_USER: root
+        MYSQL_USER: connect
         MYSQL_PASSWORD: Candor82
 redis:
     build: ./redis/

@@ -77,4 +77,4 @@
    eval (LAST LINE OF THE PREVOUS COMMAND)
    ```   
    
-* On windows, when mounting volumes, be wary of drives outside the c:/Users as they may not mount and docker will not warn you
+* If you are using docker-machine i.e. not running docker natively, when defining volumes be wary of directory(s) outside the c:/Users as they may not mount and docker will not warn you!
