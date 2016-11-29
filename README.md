@@ -46,7 +46,7 @@
 7. Import the sql file via command line:
 
    ```
-   mysql -u root -p connect < %SQL_DUMP_LOCATION%
+   mysql -u root -p connect --max_allowed_packet=9G < %SQL_DUMP_LOCATION%
    ```
 
 8. To obtain the public IP run via terminal:
@@ -59,6 +59,8 @@
 10. Site should appear as standard prompting you to login.
 
 ### Advisories
+
+* Make sure you have at least 
 
 * You may want to clear drupal cache by running the following:
 

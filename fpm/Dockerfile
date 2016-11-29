@@ -19,6 +19,11 @@ RUN composer install
 
 COPY ./drushrc.php ~/.drush/
 
+RUN yes | pecl install xdebug \
+    && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini
+
 RUN mkdir -p /data/shared/tmp && mkdir -p /data/shared/private
 
 RUN chown www-data:staff /tmp /data/shared/tmp /data/shared/private

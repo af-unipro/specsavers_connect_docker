@@ -25,6 +25,9 @@ fpm:
         - solr
     volumes:
         - ${CONNECT_WWW_VOLUME}:/var/www/html:rw
+    environment:
+        - XDEBUG_CONFIG=remote_host=10.0.2.2
+        - PHP_IDE_CONFIG=serverName=connect.dev
 nginx:
     build: ./nginx/
     ports:
