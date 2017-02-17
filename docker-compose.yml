@@ -5,10 +5,10 @@ mysql:
     volumes:
         - ${CONNECT_MYSQL_VOLUME}:/var/lib/mysql
     environment:
-        MYSQL_ROOT_PASSWORD: Candor82
-        MYSQL_DATABASE: connect
-        MYSQL_USER: connect
-        MYSQL_PASSWORD: Candor82
+        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        MYSQL_DATABASE: ${CONNECT_MYSQL_DBNAME}
+        MYSQL_USER: ${CONNECT_MYSQL_USER}
+        MYSQL_PASSWORD: ${CONNECT_MYSQL_PWD}
 redis:
     build: ./redis/
     ports:
